@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+apply plugin: 'application'
+
+mainClassName = 'hello.Main'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+jar {
+    baseName = 'gs-gradle'
+    version =  '0.1.0'
+}
+
+dependencies {
+    compile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
